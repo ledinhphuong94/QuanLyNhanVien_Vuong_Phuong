@@ -1,8 +1,8 @@
 function DanhSachNV(){
     this.mangNV = [];
 
-    this.themNV = function(){
-
+    this.themNV = function(nv){
+        this.mangNV.push(nv);
     }
 
     this.xoaNV = function(){
@@ -23,7 +23,7 @@ function DanhSachNV(){
 
     // Tìm nhân viên theo theo Mã NV
 
-    this.timNVtheoIndex = functon(){
+    this.timNVtheoIndex = function(){
 
     }
 }
