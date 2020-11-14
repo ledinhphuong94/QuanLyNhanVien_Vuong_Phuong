@@ -1,8 +1,8 @@
 function DanhSachNV(){
     this.mangNV = [];
 
-    this.themNV = function(){
-
+    this.themNV = function(nv){
+        this.mangNV.push(nv);
     }
 
     this.xoaNV = function(){
