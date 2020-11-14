@@ -23,7 +23,7 @@ function DanhSachNV(){
 
     // Tìm nhân viên theo theo Mã NV
 
-    this.timNVtheoIndex = functon(){
+    this.timNVtheoIndex = function(){
 
     }
 }
