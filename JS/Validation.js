@@ -9,19 +9,19 @@ function ValidationCheckForm (){
      * input: {tin nhắn thông báo} message  
      * output: Boolean
      */
-    this.kiemTraRong = function(value, spanID,message) {
+    this.kiemTraRong = function(value,spanID,message) {
         if(value == ""){
             // nếu sai
             // thông báo lỗi và hiển thị 
-            getEl(spanID).innerHTML = message;
-            getEl(spanID).style.display = "block";
+            getELE(spanID).innerHTML = message;
+            getELE(spanID).style.display = "block";
             // trả về true false 
             return false
         }else {
             // nếu đúng
             // xóa thông báo lỗi và ẩn đi 
-            getEl(spanID).innerHTML = " ";
-            getEl(spanID).style.display = "none"
+            getELE(spanID).innerHTML = " ";
+            getELE(spanID).style.display = "none"
             // trả về true false 
             return true
         }
@@ -40,12 +40,12 @@ function ValidationCheckForm (){
         // console.log(result);
         if(result === true){
             // mảng bị trùng 
-            getEl(spanID).innerHTML = message;
-            getEl(spanID).style.display = "block";
+            getELE(spanID).innerHTML = message;
+            getELE(spanID).style.display = "block";
             return false
         }else {
-            getEl(spanID).innerHTML = " ";
-            getEl(spanID).style.display = "none"
+            getELE(spanID).innerHTML = " ";
+            getELE(spanID).style.display = "none"
             return true
         }
     }
@@ -69,15 +69,15 @@ function ValidationCheckForm (){
         if(regex.test(value)){
             // nếu sai
             // thông báo lỗi và hiển thị 
-            getEl(spanID).innerHTML = " ";
-            getEl(spanID).style.display = "none"
+            getELE(spanID).innerHTML = " ";
+            getELE(spanID).style.display = "none"
             // trả về true false 
             return true
         }else{
             // nếu đúng
             // xóa thông báo lỗi và ẩn đi 
-            getEl(spanID).innerHTML = message;
-            getEl(spanID).style.display = "block";
+            getELE(spanID).innerHTML = message;
+            getELE(spanID).style.display = "block";
             // trả về true false 
             return false
         }
@@ -91,13 +91,13 @@ function ValidationCheckForm (){
      * description: không so sánh cụm từ vì dễ bị đổi.  nên sử dụng SelectedID để lấy index nếu index lớn hơn 0 thì đúng
      */
     this.kiemTraChucVu = function(selectID, spanID, message){
-        if(getEl(selectID).selectedIndex != 0){
-            getEl(spanID).innerHTML = " ";
-            getEl(spanID).style.display = "none";
+        if(getELE(selectID).selectedIndex != 0){
+            getELE(spanID).innerHTML = " ";
+            getELE(spanID).style.display = "none";
             return true
         }else {
-            getEl(spanID).innerHTML = message ;
-            getEl(spanID).style.display = "block"
+            getELE(spanID).innerHTML = message ;
+            getELE(spanID).style.display = "block"
             return false;
         }
     }
@@ -108,22 +108,22 @@ function ValidationCheckForm (){
      * input: {tin nhắn thông báo} message
      * output: Boolean
      */
-    this.kiemTraLuongCB = function(selectID, spanID, message){
+    this.kiemTraLuongCB = function(value, spanID, message){
          var regex = /^[0-9]+(\.[0-9]{1,2})?$/gm;
         console.log(regex.test(value))
         console.log(value);
         if(regex.test(value)){
             // nếu sai
             // thông báo lỗi và hiển thị 
-            getEl(spanID).innerHTML = " ";
-            getEl(spanID).style.display = "none"
+            getELE(spanID).innerHTML = " ";
+            getELE(spanID).style.display = "none"
             // trả về true false 
             return true
         }else{
             // nếu đúng
             // xóa thông báo lỗi và ẩn đi 
-            getEl(spanID).innerHTML = message;
-            getEl(spanID).style.display = "block";
+            getELE(spanID).innerHTML = message;
+            getELE(spanID).style.display = "block";
             // trả về true false 
             return false
         }
@@ -142,15 +142,15 @@ function ValidationCheckForm (){
        if(regex.test(value)){
            // nếu sai
            // thông báo lỗi và hiển thị 
-           getEl(spanID).innerHTML = " ";
-           getEl(spanID).style.display = "none"
+           getELE(spanID).innerHTML = " ";
+           getELE(spanID).style.display = "none"
            // trả về true false 
            return true
        }else{
            // nếu đúng
            // xóa thông báo lỗi và ẩn đi 
-           getEl(spanID).innerHTML = message;
-           getEl(spanID).style.display = "block";
+           getELE(spanID).innerHTML = message;
+           getELE(spanID).style.display = "block";
            // trả về true false 
            return false
        }

@@ -10,17 +10,22 @@ function NhanVien(maNV, hoTen, chucVu, luongCoBan, gioLam ){
     this.chucVu = chucVu;
     this.luongCoBan = luongCoBan;
     this.gioLam = gioLam;
+
     this.tinhLuong = function(){
         var tongLuong = 0
         switch(this.chucVu) {
-            case "Giám Đốc":
+            case "Giám đốc":
               tongLuong = this.luongCoBan * 3;
+              console.log("GD"+tongLuong);
               break;
             case "Trưởng Phòng":
               tongLuong = this.luongCoBan * 2;
+              console.log("TP"+tongLuong);
               break;
-            case "Nhân Viên":
+            case "Nhân viên":
               tongLuong = this.luongCoBan;
+              console.log("NV"+tongLuong);
+              break;
             default :
             console.log("Không tính được lương")
           }
@@ -40,10 +45,10 @@ function NhanVien(maNV, hoTen, chucVu, luongCoBan, gioLam ){
         }
     }
 
+
 }
-/* //TEST  OOP NHan Vien
-var NV1 = new NhanVien(123, "victor", "Trưởng Phòng", 3000, 150);
-console.log(NV1);
-console.log(NV1.tinhLuong());
-console.log(NV1.xepLoai());
-*/
+//TEST  OOP NHan Vien
+//  var NV1 = new NhanVien(123, "victor", "Trưởng Phòng", 3000, 150);
+// // console.log(NV1);
+// console.log(NV1.tinhLuong("chucVu"));
+// console.log(NV1.xepLoai());
