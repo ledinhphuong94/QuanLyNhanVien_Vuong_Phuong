@@ -13,13 +13,13 @@ function NhanVien(maNV, hoTen, chucVu, luongCoBan, gioLam ){
     this.tinhLuong = function(){
         var tongLuong = 0
         switch(this.chucVu) {
-            case "Giám Đốc":
+            case "Giám đốc":
               tongLuong = this.luongCoBan * 3;
               break;
             case "Trưởng Phòng":
               tongLuong = this.luongCoBan * 2;
               break;
-            case "Nhân Viên":
+            case "Nhân viên":
               tongLuong = this.luongCoBan;
             default :
             console.log("Không tính được lương")
@@ -35,7 +35,10 @@ function NhanVien(maNV, hoTen, chucVu, luongCoBan, gioLam ){
             return "Khá"
         }else if(this.gioLam > 50){
             return "Trung Bình"
-        }else{
+        }else if(this.gioLam <= 50){
+            return "Yếu"
+        }
+        else{
             return "Không xếp Loại"
         }
     }

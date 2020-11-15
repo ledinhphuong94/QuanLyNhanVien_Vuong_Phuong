@@ -69,7 +69,48 @@ getELE("btnThemNV").addEventListener("click", function(){
     if(isValid){
         // add Nhan Vien Vao Danh Sach Nhan Vien 
         danhSachNhanVien.themNV(NV);
+        // console.log(danhSachNhanVien);
+        hienThiDanhSach(danhSachNhanVien.mangNV)
         resetForm();
     }
 
 })
+/**
+ * Function: update nhân viên khi click nút update
+ * Author: Vuong Do
+ * Date: 15/11/2020
+ * Event: click Button Cập Nhật
+ * out: Cập Nhật Nhân Viên vào danh sách nhân viên
+ */
+getELE("btnCapNhatNV").addEventListener("click", function(){
+    // console.log("Cap nhat")
+
+});
+/**
+ * Function: hiển thị danh sách trên table
+ * Author: Vuong Do
+ * Date: 15/11/2020
+ * Event: click Button Thêm
+ * out: hiển thị danh sách
+ */
+function hienThiDanhSach(DS){
+    let content = "";
+    DS.map(nv => {
+        content  += `
+        <tr>
+             <td>${nv.maNV}</td>
+             <td>${nv.hoTen}</td>
+             <td>${nv.chucVu}</td>
+             <td>${nv.luongCoBan}</td>
+             <td>${nv.gioLam}</td>
+             <td>${nv.xepLoai()}</td>
+             <td>${nv.tinhLuong()}</td>
+             <td>
+                <button class="btn btn-danger" onClick=xoaNV("${nv.maNV}")>Xóa</button>
+                <button class="btn btn-success" onClick=capNhatNV("${nv.maNV}") data-toggle="modal" data-target="#myModal">Cập Nhật</button>
+             </td>
+        </tr>
+        ` 
+     })
+     getELE("tbodyNhanVien").innerHTML = content;
+}
