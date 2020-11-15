@@ -95,6 +95,9 @@ function suaNhanVien(maNV){
     getELE("upd-luongCB").value = dsnv.mangNV[index].luongCoBan;
 
     getELE("upd-gioLam").value = dsnv.mangNV[index].gioLam;
+
+    getELE("tb-capNhatThanhCong").innerHTML = "";
+    getELE("tb-capNhatThanhCong").style.display ="none";
 }
 
 // 2. Xét hợp lệ + Cập nhật
@@ -129,6 +132,9 @@ getELE("btn-capNhatNV").addEventListener('click',function(){
         dsnv.hienThiDS(dsnv.mangNV)
         // Lưu về local store
         setLocalStorage(dsnv.mangNV)
+        // Thong bao cap nhat thanh cong
+        getELE("tb-capNhatThanhCong").innerHTML = "Cập nhật thành công !";
+        getELE("tb-capNhatThanhCong").style.display ="block";
     }
 
 })

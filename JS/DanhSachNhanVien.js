@@ -38,7 +38,10 @@ function DanhSachNV(){
         let maLowCase = ma.toLowerCase().trim();
         const mangTimKiem = this.mangNV.filter((item,index) => {
             let hoTenLowCase = item.hoTen.toLowerCase().trim();
-            return (hoTenLowCase.indexOf(maLowCase) >= 0) 
+            let maNVLowCase = item.maNV.toLowerCase().trim();
+            let loaiNVLowCase = item.xepLoai().toLowerCase().trim();
+
+            return (hoTenLowCase.indexOf(maLowCase) >= 0 || maNVLowCase.indexOf(maLowCase) >= 0 || loaiNVLowCase.indexOf(maLowCase) >= 0) 
 
         })
 

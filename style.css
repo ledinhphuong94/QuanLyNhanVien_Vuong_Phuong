@@ -2,3 +2,11 @@
     color:red;
     display:none;
 }
+#btnCapNhatNV{
+    display: none;
+}
+#tb-capNhatThanhCong{
+    display:block;
+    color:red;
+    font-size: 20px;
+}

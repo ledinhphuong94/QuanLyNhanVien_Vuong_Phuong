@@ -40,7 +40,10 @@ function NhanVien(maNV, hoTen, chucVu, luongCoBan, gioLam ){
             return "Khá"
         }else if(this.gioLam > 50){
             return "Trung Bình"
-        }else{
+        }else if(this.gioLam <= 50){
+            return "Yếu"
+        }
+        else{
             return "Không xếp Loại"
         }
     }
