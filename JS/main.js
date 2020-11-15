@@ -58,6 +58,8 @@ getELE("add-btn").addEventListener("click",function(){
         dsnv.themNV(nv);
         // Hiển thị danh sách
         dsnv.hienThiDS(dsnv.mangNV);
+        //Reset 
+        resetForm();
         // Lưu vào local storage       
         setLocalStorage(dsnv.mangNV);
 
@@ -76,6 +78,19 @@ function xoaNhanVien(maNV) {
     dsnv.hienThiDS(dsnv.mangNV)
     // Lưu lại vào local storage
     setLocalStorage(dsnv.mangNV)
+
+}
+/**
+ * Function: Reset Form
+ * Author: VuongDo
+ * Date: 15/11/2020
+ */
+function resetForm(){
+    getELE("txtMaNV").value = '';
+    getELE("txtTenNV").value = '';
+    getELE("chucVu").selectedIndex = 0;
+    getELE("txtLuongCoBan").value = '';
+    getELE("txtGioLam").value = '';
 
 }
 
