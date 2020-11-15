@@ -24,7 +24,22 @@ function xoaNhanVien() {
 function suaNhanVien(){
 
 }
+/**
+ * Function: Reset Form
+ * Author: VuongDo
+ * Date: 15/11/2020
+ */
+function resetForm(){
+    getELE("txtMaNV").value = '';
+    getELE("txtTenNV").value = '';
+    getELE("chucVu").selectedIndex = 0;
+    getELE("txtLuongCoBan").value = '';
+    getELE("txtGioLam").value = '';
 
+}
+/**
+ * Tao danh sach nhan vien
+ */
 var danhSachNhanVien = new DanhSachNV();
 /**
  * Function: tạo nhân viên khi click nút thêm
@@ -54,6 +69,7 @@ getELE("btnThemNV").addEventListener("click", function(){
     if(isValid){
         // add Nhan Vien Vao Danh Sach Nhan Vien 
         danhSachNhanVien.themNV(NV);
+        resetForm();
     }
 
 })
