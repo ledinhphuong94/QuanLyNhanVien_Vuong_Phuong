@@ -7,6 +7,7 @@
  */
 function hienThongTinLenForm(NV){
     getELE("txtMaNV").setAttribute("disabled", true);
+    getELE("txtMaNV").value = NV.maNV;
     getELE("txtTenNV").value = NV.hoTen;
     getELE("chucVu").value = NV.chucVu;
     getELE("txtLuongCoBan").value = NV.luongCoBan;

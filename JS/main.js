@@ -76,17 +76,6 @@ getELE("btnThemNV").addEventListener("click", function(){
 
 })
 /**
- * Function: update nhân viên khi click nút update
- * Author: Vuong Do
- * Date: 15/11/2020
- * Event: click Button Cập Nhật
- * out: Cập Nhật Nhân Viên vào danh sách nhân viên
- */
-getELE("btnCapNhatNV").addEventListener("click", function(){
-    // console.log("Cap nhat")
-
-});
-/**
  * Function: hiển thị danh sách trên table
  * Author: Vuong Do
  * Date: 15/11/2020
@@ -107,10 +96,43 @@ function hienThiDanhSach(DS){
              <td>${nv.tinhLuong()}</td>
              <td>
                 <button class="btn btn-danger" onClick=xoaNV("${nv.maNV}")>Xóa</button>
-                <button class="btn btn-success" onClick=capNhatNV("${nv.maNV}") data-toggle="modal" data-target="#myModal">Cập Nhật</button>
+                <button class="btn btn-success" onClick=capNhatNhanVien("${nv.maNV}") data-toggle="modal" data-target="#myModal">Cập Nhật</button>
              </td>
         </tr>
         ` 
      })
      getELE("tbodyNhanVien").innerHTML = content;
 }
+/**
+ * Function: update nhân viên khi click nút update
+ * Author: Vuong Do
+ * Date: 15/11/2020
+ * Event: click Button Cập Nhật
+ * out: Cập Nhật Nhân Viên vào danh sách nhân viên
+ */
+function  capNhatNhanVien(id){
+    // console.log(id);
+    // xử lý button 
+    getELE("btnThemNV").style.display = "none"; 
+    getELE("btnCapNhatNV").style.display = "inline-block";
+    var index = danhSachNhanVien.timIndexNV(id);
+    var NV;
+    // hiển thị thông tin lên modal 
+    if(index !== -1){
+        NV = danhSachNhanVien.mangNV[index];
+        // console.log(DSNV.DSNV[index]);
+        hienThongTinLenForm(NV);
+
+    }   
+}
+// cập nhật thông tin 
+getELE("btnCapNhatNV").addEventListener("click", function(){
+    // cập nhât 
+    danhSachNhanVien.capNhatNV(layThongTinTuForm());
+    // hiển thị lại     
+    hienThiDanhSach(danhSachNhanVien.mangNV);
+    //Reset
+    getELE("btnThemNV").style.display = "inline-block"; 
+    getELE("btnCapNhatNV").style.display = "none";
+    resetForm();
+})

@@ -1,3 +1,6 @@
 .sp-thongbao {
     color: red;
 }
+#btnCapNhatNV {
+    display: none;
+}
