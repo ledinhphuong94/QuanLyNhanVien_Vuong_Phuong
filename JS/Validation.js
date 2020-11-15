@@ -63,8 +63,8 @@ function ValidationCheckForm() {
         "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
         "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"
     );
-    console.log(regex.test(value));
-    console.log(value);
+    // console.log(regex.test(value));
+    // console.log(value);
     if (regex.test(value)) {
       // nếu sai
       // thông báo lỗi và hiển thị
